@@ -24,30 +24,32 @@ class LoginPresenter (override val view: LoginView,
     fun navigateToRecoverPassword() = navigator.toRecoverPassword()
 
     override fun clearView() {
-
+        view.hideLoginLoading()
     }
 
     /**
      * LOGIN REQUEST VALIDATOR
      */
     override fun onIncorrectEmailFormat() {
-        view.showIncorrectLoginUserDataError()
-        clearView() //To change body of created functions use File | Settings | File Templates.
+        view.showIncorrectEmailFormatError()
+        clearView()
     }
 
 
     override fun onIncorrectPasswordFormat() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        view.showIncorrectPasswordFormatError()
+        clearView()
     }
 
     /**
      * LOGIN RESPONSE OVERRIDE
      */
     override fun onUserLoggedIn(user: User) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        navigator.toMain()
     }
 
     override fun onIncorrectLoginUserData() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        view.showIncorrectLoginUserDataError()
+        clearView()
     }
 }

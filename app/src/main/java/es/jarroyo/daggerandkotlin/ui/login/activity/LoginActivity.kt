@@ -13,10 +13,9 @@ import kotlinx.android.synthetic.main.progress_bar_default.*
 import javax.inject.Inject
 
 class LoginActivity : BaseActivity(), LoginView {
-
-
     @Inject
     lateinit var presenter: LoginPresenter
+
 
     override var layoutId: Int = R.layout.activity_login
 
@@ -24,7 +23,6 @@ class LoginActivity : BaseActivity(), LoginView {
         applicationComponent.plus(LoginActivityModule(this))
                 .injectTo(this)
     }
-
 
     @OnClick(R.id.text_recover_password, R.id.text_sign_in, R.id.button_login)
     fun onViewClicked(view: View) {
@@ -36,6 +34,7 @@ class LoginActivity : BaseActivity(), LoginView {
                     input_password.text())
         }
     }
+
 
     /**
      *  LOGIN VIEW OVERRIDE
@@ -52,5 +51,13 @@ class LoginActivity : BaseActivity(), LoginView {
 
     override fun showIncorrectLoginUserDataError() {
         toast("showIncorrectLoginUserDataError")
+    }
+
+    override fun showIncorrectEmailFormatError() {
+        toast("showIncorrectEmailFormatError")
+    }
+
+    override fun showIncorrectPasswordFormatError() {
+        toast("showIncorrectPasswordFormatError")
     }
 }
