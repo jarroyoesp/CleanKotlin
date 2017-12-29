@@ -15,11 +15,41 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation":
+                                     "$projectDir/schemas".toString()]
+            }
+        }
     }
     buildTypes {
+        def STRING = "String"
+        def INT = "int"
+        def API_URL = "API_URL"
+        def MIN_NAME_LENGTH = "MIN_NAME_LENGTH"
+        def MIN_SURNAME_LENGTH = "MIN_SURNAME_LENGTH"
+        def PHONE_LENGTH = "PHONE_LENGTH"
+        def MARVEL_API_URL = "MARVEL_API_URL"
+        def MARVEL_API_PUBLIC_KEY = "MARVEL_API_PUBLIC_KEY"
+        def MARVEL_API_PRIVATE_KEY = "MARVEL_API_PRIVATE_KEY"
+
+
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        all {
+            buildConfigField INT, MIN_NAME_LENGTH, "2"
+            buildConfigField INT, MIN_SURNAME_LENGTH, "2"
+            buildConfigField INT, PHONE_LENGTH, "9"
+            buildConfigField STRING, API_URL, "\"http://apiurlexample.com\""
+            buildConfigField STRING, MARVEL_API_URL, "\"http://gateway.marvel.com/\""
+            buildConfigField STRING, MARVEL_API_PUBLIC_KEY, "\"85097bc62f14ff53975d4d92519b111a\""
+            buildConfigField STRING, MARVEL_API_PRIVATE_KEY, "\"2bfc2b424d5b50086ae2242409ec86d8be0a4e3a\""
+
         }
     }
 }
@@ -48,6 +78,9 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.5.1'
     kapt 'com.jakewharton:butterknife-compiler:8.5.1'
 
+    compile 'android.arch.persistence.room:runtime:1.0.0'
+    annotationProcessor 'android.arch.persistence.room:compiler:1.0.0'
+    kapt "android.arch.persistence.room:compiler:1.0.0"
 
 }
 

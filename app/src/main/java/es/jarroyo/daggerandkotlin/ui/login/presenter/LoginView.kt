@@ -8,4 +8,5 @@ import es.jarroyo.daggerandkotlin.ui.base.PresentationView
 interface LoginView: PresentationView {
     fun showLoginLoading()
     fun hideLoginLoading()
+    fun showIncorrectLoginUserDataError()
 }

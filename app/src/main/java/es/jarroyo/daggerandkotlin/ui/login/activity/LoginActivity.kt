@@ -5,10 +5,7 @@ import butterknife.OnClick
 import es.jarroyo.daggerandkotlin.R
 import es.jarroyo.daggerandkotlin.app.di.component.ApplicationComponent
 import es.jarroyo.daggerandkotlin.app.di.subcomponent.login.LoginActivityModule
-import es.jarroyo.daggerandkotlin.ui.base.BaseActivity
-import es.jarroyo.daggerandkotlin.ui.base.gone
-import es.jarroyo.daggerandkotlin.ui.base.text
-import es.jarroyo.daggerandkotlin.ui.base.visible
+import es.jarroyo.daggerandkotlin.ui.base.*
 import es.jarroyo.daggerandkotlin.ui.login.presenter.LoginPresenter
 import es.jarroyo.daggerandkotlin.ui.login.presenter.LoginView
 import kotlinx.android.synthetic.main.activity_login.*
@@ -16,6 +13,8 @@ import kotlinx.android.synthetic.main.progress_bar_default.*
 import javax.inject.Inject
 
 class LoginActivity : BaseActivity(), LoginView {
+
+
     @Inject
     lateinit var presenter: LoginPresenter
 
@@ -49,5 +48,9 @@ class LoginActivity : BaseActivity(), LoginView {
     override fun hideLoginLoading() {
         progress_wheel.gone()
         button_login.visible()
+    }
+
+    override fun showIncorrectLoginUserDataError() {
+        toast("showIncorrectLoginUserDataError")
     }
 }
