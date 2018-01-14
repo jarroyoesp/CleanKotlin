@@ -5,4 +5,10 @@
     <string name="login_login">Login</string>
     <string name="login_recover_password">Recover Password</string>
     <string name="login_sign_in">Sign In</string>
+
+    <string name="error_character_comics_not_found">Ups! Captain America is busy right now. Please, try later</string>
+    <string name="error_network_connection">Ups! It seems you have lost your Internet connection. Please, try later</string>
+    <string name="error_comic_not_valid">Ups! It seems the comic selected has not enough information :(</string>
+
+
 </resources>
