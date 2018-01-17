@@ -9,7 +9,7 @@ import es.jarroyo.daggerandkotlin.domain.usecase.home.GetHomeRequest
 class HomeRepository(private val networkDataSource: NetworkDataSource,
                      private val comicEntityDataMapper: HomeEntityDataMapper) {
 
-    fun getComics(request: GetHomeRequest): Response<List<DataHome>> {
+    fun getHome(request: GetHomeRequest): Response<List<DataHome>> {
         val response = networkDataSource.getHome(request)
         val comicEntities = response.data!!
         val comics = comicEntities.map { comicEntityDataMapper.map(it) }

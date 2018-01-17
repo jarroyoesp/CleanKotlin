@@ -5,7 +5,10 @@ import butterknife.OnClick
 import es.jarroyo.daggerandkotlin.R
 import es.jarroyo.daggerandkotlin.app.di.component.ApplicationComponent
 import es.jarroyo.daggerandkotlin.app.di.subcomponent.login.LoginActivityModule
-import es.jarroyo.daggerandkotlin.ui.base.*
+import es.jarroyo.daggerandkotlin.ui.base.BaseActivity
+import es.jarroyo.daggerandkotlin.ui.base.gone
+import es.jarroyo.daggerandkotlin.ui.base.toast
+import es.jarroyo.daggerandkotlin.ui.base.visible
 import es.jarroyo.daggerandkotlin.ui.login.presenter.LoginPresenter
 import es.jarroyo.daggerandkotlin.ui.login.presenter.LoginView
 import kotlinx.android.synthetic.main.activity_login.*
@@ -22,6 +25,7 @@ class LoginActivity : BaseActivity(), LoginView {
     override fun setupInjection(applicationComponent: ApplicationComponent) {
         applicationComponent.plus(LoginActivityModule(this))
                 .injectTo(this)
+
     }
 
     @OnClick(R.id.text_recover_password, R.id.text_sign_in, R.id.button_login)
@@ -29,9 +33,11 @@ class LoginActivity : BaseActivity(), LoginView {
         when (view.id) {
             R.id.text_recover_password -> presenter.navigateToRecoverPassword()
             R.id.text_sign_in -> presenter.navigateToSignUp()
-            R.id.button_login -> presenter.login(
+            R.id.button_login -> /*presenter.login(
                     input_email.text(),
-                    input_password.text())
+                    input_password.text())*/
+                // Navegamos a Home
+                navigator.toMain()
         }
     }
 

@@ -16,7 +16,7 @@ class GetHomeUseCase(private val homeRepository: HomeRepository,
 
     override fun run() {
         try {
-            val response = homeRepository.getComics(request!!)
+            val response = homeRepository.getHome(request!!)
             notifyComicsReceived(response.data!!)
         } catch (e: NetworkConnectionException) {
             notifyNetworkConnectionError()
