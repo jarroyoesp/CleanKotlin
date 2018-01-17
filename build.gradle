@@ -40,4 +40,5 @@ ext {
     retrofitVersion = "2.3.0"
     butterknifeVersion = "8.5.1"
     daggerVersion = "2.11"
+    picassoVersion = "2.5.2"
 }
