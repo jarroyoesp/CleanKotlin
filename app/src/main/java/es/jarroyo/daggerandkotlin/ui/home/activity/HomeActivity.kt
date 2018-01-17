@@ -40,9 +40,9 @@ class HomeActivity: BaseActivity(), HomeView {
     }
 
     override fun setDataInHomeList(homeListDisplayModel: HomeDisplayModel) {
-        val homeAdapter = HomeAdapter(homeListDisplayModel) //{
-            //presenter.onItemOnListClicked(it)
-        //}
+        val homeAdapter = HomeAdapter(homeListDisplayModel, {
+            presenter.onItemOnListClicked(it)
+        })
         activity_home_rv.adapter = homeAdapter
     }
 
@@ -63,6 +63,6 @@ class HomeActivity: BaseActivity(), HomeView {
     }
 
     override fun showHomeHasNotAllInfoError() {
-        toast(getString(R.string.error_comic_not_valid))
+        toast("Clicked")
     }
 }

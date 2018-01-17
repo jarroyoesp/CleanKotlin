@@ -32,6 +32,16 @@ class HomePresenter (override val view: HomeView,
         view.hideProgressWheel()
     }
 
+    fun onItemOnListClicked(position: Int) {
+        val comicSelected = comics[position]
+        if (comicSelected.hasAllInfo()) {
+            //navigator.toHomeDetail(comicSelected)
+            view.showHomeHasNotAllInfoError()
+        } else {
+            view.showHomeHasNotAllInfoError()
+        }
+    }
+
     override fun clearView() {
         view.hideProgressWheel()
     }
