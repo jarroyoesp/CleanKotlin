@@ -66,6 +66,14 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
+    // TESTS
+    compile "org.mockito:mockito-core:2.8.9"
+    // For local unit tests on your development machine
+    testCompile "org.mockito:mockito-core:2.8.9"
+    // For instrumentation tests on Android devices and emulators
+    androidTestCompile "org.mockito:mockito-android:2.8.9"
+    androidTestCompile 'com.android.support.test.espresso:espresso-intents:3.0.1'
+
     implementation 'com.android.support:appcompat-v7:'+ rootProject.ext.supportLibVersion
     compile 'com.android.support:support-v4:' + rootProject.ext.supportLibVersion
     compile 'com.android.support:design:' + rootProject.ext.supportLibVersion
