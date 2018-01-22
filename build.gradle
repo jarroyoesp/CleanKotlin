@@ -37,7 +37,7 @@ ext {
     targetSdkVersion = 22
 
     supportLibVersion = "26.1.0"
-    playServicesVersion = "11.4.2"
+    playServicesVersion = "11.0.4"
 
     retrofitVersion = "2.3.0"
     butterknifeVersion = "8.5.1"
