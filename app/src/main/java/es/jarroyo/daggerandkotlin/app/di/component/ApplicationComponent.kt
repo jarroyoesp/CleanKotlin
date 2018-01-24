@@ -9,6 +9,8 @@ import es.jarroyo.daggerandkotlin.app.di.subcomponent.home.HomeActivityComponent
 import es.jarroyo.daggerandkotlin.app.di.subcomponent.home.HomeActivityModule
 import es.jarroyo.daggerandkotlin.app.di.subcomponent.login.LoginActivityComponent
 import es.jarroyo.daggerandkotlin.app.di.subcomponent.login.LoginActivityModule
+import es.jarroyo.daggerandkotlin.app.di.subcomponent.signup.SignUpActivityComponent
+import es.jarroyo.daggerandkotlin.app.di.subcomponent.signup.SignUpActivityModule
 import javax.inject.Singleton
 
 /**
@@ -23,4 +25,5 @@ import javax.inject.Singleton
 interface ApplicationComponent {
     fun plus(module: LoginActivityModule): LoginActivityComponent
     fun plus(module: HomeActivityModule): HomeActivityComponent
+    fun plus(module: SignUpActivityModule): SignUpActivityComponent
 }

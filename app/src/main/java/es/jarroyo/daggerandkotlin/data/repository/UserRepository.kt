@@ -6,6 +6,7 @@ import es.jarroyo.daggerandkotlin.data.source.network.NetworkDataSource
 import es.jarroyo.daggerandkotlin.domain.model.User
 import es.jarroyo.daggerandkotlin.domain.usecase.base.Response
 import es.jarroyo.daggerandkotlin.domain.usecase.login.LoginRequest
+import es.jarroyo.daggerandkotlin.domain.usecase.signUp.SignUpRequest
 
 
 class UserRepository(private val networkDataSource: NetworkDataSource,
@@ -27,12 +28,12 @@ fun login(request: LoginRequest): Response<User> {
     return Response(userEntityDataMapper.map(user))
 }
 
-/*fun signUp(request: SignUpRequest): Response<User> {
+fun signUp(request: SignUpRequest): Response<User> {
     val response = networkDataSource.signUp(request)
     val user = response.data!!
     saveUser(user)
     return Response(userEntityDataMapper.map(user))
-}*/
+}
 
 private fun saveUser(user: UserEntity?) {
     user?.let {

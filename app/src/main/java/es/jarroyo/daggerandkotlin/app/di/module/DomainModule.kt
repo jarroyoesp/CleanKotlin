@@ -8,6 +8,7 @@ import es.jarroyo.daggerandkotlin.domain.usecase.executor.MainThread
 import es.jarroyo.daggerandkotlin.domain.usecase.executor.UseCaseExecutor
 import es.jarroyo.daggerandkotlin.domain.usecase.home.GetHomeUseCase
 import es.jarroyo.daggerandkotlin.domain.usecase.login.LoginUseCase
+import es.jarroyo.daggerandkotlin.domain.usecase.signUp.SignUpUseCase
 
 @Module
 class DomainModule {
@@ -23,5 +24,8 @@ class DomainModule {
                                 mainThread: MainThread)
             = GetHomeUseCase(homeRepository, executor, mainThread)
 
-
+    @Provides
+    fun provideSignUpUseCase(userRepository: UserRepository, executor: UseCaseExecutor,
+                              mainThread: MainThread)
+            = SignUpUseCase(userRepository, executor, mainThread)
 }

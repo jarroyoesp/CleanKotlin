@@ -4,6 +4,7 @@ import android.content.Intent
 import es.jarroyo.daggerandkotlin.ui.base.BaseActivity
 import es.jarroyo.daggerandkotlin.ui.home.activity.HomeActivity
 import es.jarroyo.daggerandkotlin.ui.login.activity.LoginActivity
+import es.jarroyo.daggerandkotlin.ui.signup.activity.SignUpActivity
 
 class Navigator {
 
@@ -38,7 +39,7 @@ class Navigator {
     }
 
     fun toSignUp() {
-        //toDefaultActivity(SignUpActivity::class.java)
+        toDefaultActivity(SignUpActivity::class.java)
     }
 
     fun toRecoverPassword() {

@@ -6,6 +6,21 @@
     <string name="login_recover_password">Recover Password</string>
     <string name="login_sign_in">Sign In</string>
 
+    <string name="sign_in_name">Name</string>
+    <string name="sign_in_surname">Surname</string>
+    <string name="sign_in_email">Email</string>
+    <string name="sign_in_password">Password</string>
+    <string name="sign_in_sign_in">Sign In</string>
+    <string name="sign_in_repeat_password">Repeat the password</string>
+    <string name="sign_in_error_password_not_match">Passwords do not match</string>
+
+    <string name="sign_in_error_name_format">Name must have more than %d characters</string>
+    <string name="sign_in_error_surname_format">Surname must have more than %d characters</string>
+    <string name="sign_in_error_email_format">Email format is incorrect</string>
+    <string name="sign_in_error_password_format">Password must contains at least 8 characters, a lower case letter, an upper case letter, and a number</string>
+    <string name="sign_in_error_user_already_exists">User already exists</string>
+
+
     <string name="error_character_comics_not_found">Ups! Captain America is busy right now. Please, try later</string>
     <string name="error_network_connection">Ups! It seems you have lost your Internet connection. Please, try later</string>
     <string name="error_comic_not_valid">Ups! It seems the comic selected has not enough information :(</string>
