@@ -5,6 +5,8 @@ import es.jarroyo.daggerandkotlin.app.di.module.ApplicationModule
 import es.jarroyo.daggerandkotlin.app.di.module.DataModule
 import es.jarroyo.daggerandkotlin.app.di.module.DomainModule
 import es.jarroyo.daggerandkotlin.app.di.module.RepositoryModule
+import es.jarroyo.daggerandkotlin.app.di.subcomponent.body.BodyActivityComponent
+import es.jarroyo.daggerandkotlin.app.di.subcomponent.body.BodyActivityModule
 import es.jarroyo.daggerandkotlin.app.di.subcomponent.home.HomeActivityComponent
 import es.jarroyo.daggerandkotlin.app.di.subcomponent.home.HomeActivityModule
 import es.jarroyo.daggerandkotlin.app.di.subcomponent.login.LoginActivityComponent
@@ -26,4 +28,5 @@ interface ApplicationComponent {
     fun plus(module: LoginActivityModule): LoginActivityComponent
     fun plus(module: HomeActivityModule): HomeActivityComponent
     fun plus(module: SignUpActivityModule): SignUpActivityComponent
+    fun plus(module: BodyActivityModule): BodyActivityComponent
 }

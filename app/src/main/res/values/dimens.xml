@@ -1,4 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="progress_bar_default_size">50dp</dimen>
+    <dimen name="general_padding">16dp</dimen>
+
+    <!-- TEXT SIZES -->
+    <dimen name="text_extra_tiny">9sp</dimen>
+    <dimen name="text_tiny">10sp</dimen>
+    <dimen name="text_small">12sp</dimen>
+    <dimen name="text_standard">14sp</dimen>
+    <dimen name="text_medium">16sp</dimen>
+    <dimen name="text_large">18sp</dimen>
+    <dimen name="text_xl">20sp</dimen>
+    <dimen name="text_xxl">22sp</dimen>
+    <dimen name="text_xxxl">24sp</dimen>
+    <dimen name="text_xxxxl">26sp</dimen>
+
+    <!-- BODY -->
+    <dimen name="circle_mid">37dp</dimen>
+    <dimen name="circle_small">25dp</dimen>
+    <dimen name="circle_tiny">15dp</dimen>
+    <dimen name="spine_width">13dp</dimen>
+    <dimen name="body_tiny_textsize">@dimen/text_tiny</dimen>
+    <dimen name="body_mid_textsize">@dimen/text_small</dimen>
+    <dimen name="body_zoomable_padding">@dimen/general_padding</dimen>
 </resources>

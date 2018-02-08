@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="es.jarroyo.daggerandkotlin.ui.body.activity.BodyActivity">
+
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/body_frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foregroundGravity="center">
+
+
+        <!--style="@style/ZoomableBodyImage"-->
+        <ImageView
+            android:id="@+id/body_fragment_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@null"
+            android:scaleType="centerInside"
+            android:src="@drawable/body_full"/>
+
+        <Button
+            android:id="@+id/right_hand"
+            style="@style/BodyPart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/body_circle_shape"/>
+
+        <Button
+            android:id="@+id/left_hand"
+            style="@style/BodyPart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="60dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/body_circle_shape"/>
+
+        <Button
+            android:id="@+id/right_foot"
+            style="@style/BodyPart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="180dp"
+            android:background="@drawable/body_circle_shape"/>
+
+        <Button
+            android:id="@+id/left_foot"
+            style="@style/BodyPart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="45dp"
+            android:layout_marginTop="180dp"
+            android:background="@drawable/body_circle_shape"/>
+
+        <Button
+            android:id="@+id/left_hip"
+            android:tag="@string/left_hip_key"
+            style="@style/BodyPart.Mid"
+            android:layout_width="@dimen/circle_small"
+            android:layout_height="@dimen/circle_small"
+            android:layout_gravity="center"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="-15dp"
+            android:background="@drawable/body_circle_shape"/>
+
+        <Button
+            android:id="@+id/right_hip"
+            android:tag="@string/right_hip_key"
+            style="@style/BodyPart.Mid"
+            android:layout_width="@dimen/circle_small"
+            android:layout_height="@dimen/circle_small"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="-15dp"
+            android:background="@drawable/body_circle_shape"/>
+
+        <Button
+            android:id="@+id/left_groin"
+            android:tag="@string/left_groin_key"
+            style="@style/BodyPart.Mid"
+            android:layout_width="@dimen/circle_small"
+            android:layout_height="@dimen/circle_small"
+            android:layout_gravity="center"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/body_circle_shape"/>
+
+        <Button
+            android:id="@+id/right_groin"
+            android:tag="@string/right_groin_key"
+            style="@style/BodyPart.Mid"
+            android:layout_width="@dimen/circle_small"
+            android:layout_height="@dimen/circle_small"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/body_circle_shape"/>
+
+        <Button
+            android:id="@+id/right_elbow"
+            android:tag="@string/right_elbow_key"
+            style="@style/BodyPart"
+            android:layout_width="@dimen/circle_mid"
+            android:layout_height="@dimen/circle_mid"
+            android:layout_gravity="center"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="-60dp"
+            android:background="@drawable/body_circle_shape"/>
+
+        <Button
+            android:id="@+id/left_elbow"
+            android:tag="@string/left_elbow_key"
+            style="@style/BodyPart"
+            android:layout_width="@dimen/circle_mid"
+            android:layout_height="@dimen/circle_mid"
+            android:layout_gravity="center"
+            android:layout_marginRight="55dp"
+            android:layout_marginTop="-60dp"
+            android:background="@drawable/body_circle_shape"/>
+
+        <Button
+            android:id="@+id/right_shoulder"
+            android:tag="@string/right_shoulder_key"
+            style="@style/BodyPart"
+            android:layout_width="@dimen/circle_mid"
+            android:layout_height="@dimen/circle_mid"
+            android:layout_gravity="center"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="-120dp"
+            android:background="@drawable/body_circle_shape"/>
+
+        <Button
+            android:id="@+id/left_shoulder"
+            android:tag="@string/left_shoulder_key"
+            style="@style/BodyPart"
+            android:layout_width="@dimen/circle_mid"
+            android:layout_height="@dimen/circle_mid"
+            android:layout_gravity="center"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="-120dp"
+            android:background="@drawable/body_circle_shape"/>
+
+        <Button
+            android:id="@+id/right_jaw"
+            android:tag="@string/right_jaw_key"
+            style="@style/BodyPart.Mid"
+            android:layout_width="@dimen/circle_small"
+            android:layout_height="@dimen/circle_small"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="-160dp"
+            android:background="@drawable/body_circle_shape"/>
+
+        <Button
+            android:id="@+id/left_jaw"
+            android:tag="@string/left_jaw_key"
+            style="@style/BodyPart.Mid"
+            android:layout_width="@dimen/circle_small"
+            android:layout_height="@dimen/circle_small"
+            android:layout_gravity="center"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="-160dp"
+            android:background="@drawable/body_circle_shape"/>
+
+
+        <Button
+            android:id="@+id/cervical_spine"
+            android:tag="@string/cervical_spine_key"
+            style="@style/BodyPart.Spine"
+            android:layout_width="@dimen/spine_width"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="-140dp"
+            android:background="@drawable/body_spine_shape"/>
+
+        <Button
+            android:id="@+id/thoratic_spine"
+            android:tag="@string/thoratic_spine_key"
+            style="@style/BodyPart.Spine"
+            android:layout_width="@dimen/spine_width"
+            android:layout_height="66dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="-92dp"
+            android:background="@drawable/body_spine_shape"/>
+
+        <Button
+            android:id="@+id/lumbar_spine"
+            android:tag="@string/lumbar_spine_key"
+            style="@style/BodyPart.Spine"
+            android:layout_width="@dimen/spine_width"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="-40dp"
+            android:background="@drawable/body_spine_shape"/>
+
+        <Button
+            android:id="@+id/right_knee"
+            android:tag="@string/right_knee_key"
+            style="@style/BodyPart"
+            android:layout_width="@dimen/circle_mid"
+            android:layout_height="@dimen/circle_mid"
+            android:layout_gravity="center"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="95dp"
+            android:background="@drawable/body_circle_shape"/>
+
+        <Button
+            android:id="@+id/left_knee"
+            android:tag="@string/left_knee_key"
+            style="@style/BodyPart"
+            android:layout_width="@dimen/circle_mid"
+            android:layout_height="@dimen/circle_mid"
+            android:layout_gravity="center"
+            android:layout_marginRight="35dp"
+            android:layout_marginTop="95dp"
+            android:background="@drawable/body_circle_shape"/>
+    </FrameLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -17,7 +17,7 @@ fun View.gone(){
     this.visibility = View.GONE
 }
 
-fun AppCompatActivity.toast(message: String, duration: Int = Toast.LENGTH_SHORT) {
+fun AppCompatActivity.toast(message: String?, duration: Int = Toast.LENGTH_SHORT) {
     Toast.makeText(this, message, duration).show()
 }
 

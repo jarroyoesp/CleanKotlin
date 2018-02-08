@@ -8,4 +8,27 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="BodyPart">
+        <item name="android:background">@null</item>
+        <item name="android:minWidth">36dp</item>
+        <item name="android:minHeight">36dp</item>
+    </style>
+
+    <style name="BodyPart.Spine" parent="BodyPart.Tiny">
+    </style>
+
+    <style name="BodyPart.Mid">
+        <item name="android:textSize">@dimen/body_mid_textsize</item>
+    </style>
+
+    <style name="BodyPart.Tiny">
+        <item name="android:textSize">@dimen/body_tiny_textsize</item>
+    </style>
+
+    <style name="BodyText">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@null</item>
+    </style>
+
 </resources>

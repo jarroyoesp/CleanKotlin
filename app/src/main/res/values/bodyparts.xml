@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+           tools:keep="@string/*_ankle, @string/*_ankle, @string/*_elbow, @string/*_key,
+            @string/*finger*,@string/*toe*, @string/*_hip, @string/*_jaw,
+            @string/*_spine, @string/*_wrist">
+    <string name="left_ankle">left ankle</string>
+    <string name="right_ankle">right ankle</string>
+    <string name="right_midfoot">right midfoot</string>
+    <string name="left_midfoot">left midfoot</string>
+    <string name="left_elbow">left elbow</string>
+    <string name="right_elbow">right elbow</string>
+    <string name="left_index_finger_metacarpophalangeal">left index finger knuckle</string>
+    <string name="right_index_finger_metacarpophalangeal">right index finger knuckle</string>
+    <string name="left_middle_finger_metacarpophalangeal">left middle finger knuckle</string>
+    <string name="right_middle_finger_metacarpophalangeal">right middle finger knuckle</string>
+    <string name="left_ring_finger_metacarpophalangeal">left ring finger knuckle</string>
+    <string name="right_ring_finger_metacarpophalangeal">right ring finger knuckle</string>
+    <string name="left_little_finger_metacarpophalangeal">left little finger knuckle</string>
+    <string name="right_little_finger_metacarpophalangeal">right little finger knuckle</string>
+    <string name="left_index_finger_interphalangeal">left index finger</string>
+    <string name="right_index_finger_interphalangeal">right index finger</string>
+    <string name="left_middle_finger_interphalangeal">left middle finger</string>
+    <string name="right_middle_finger_interphalangeal">right middle finger</string>
+    <string name="left_ring_finger_interphalangeal">left ring finger</string>
+    <string name="right_ring_finger_interphalangeal">right ring finger</string>
+    <string name="left_little_finger_interphalangeal">left little finger</string>
+    <string name="right_little_finger_interphalangeal">right little finger</string>
+    <string name="left_hip">left hip</string>
+    <string name="right_hip">right hip</string>
+    <string name="left_groin">left groin</string>
+    <string name="right_groin">right groin</string>
+    <string name="left_jaw">left jaw</string>
+    <string name="right_jaw">right jaw</string>
+    <string name="left_knee">left knee</string>
+    <string name="right_knee">right knee</string>
+    <string name="left_shoulder">left shoulder</string>
+    <string name="right_shoulder">right shoulder</string>
+    <string name="cervical_spine">cervical spine</string>
+    <string name="thoratic_spine">thoratic spine</string>
+    <string name="lumbar_spine">lumbar spine</string>
+    <string name="left_thumb_metacarpophalangeal">left thumb knuckle</string>
+    <string name="right_thumb_metacarpophalangeal">right thumb knuckle</string>
+    <string name="left_thumb_interphalangeal">left thumb</string>
+    <string name="right_thumb_interphalangeal">right thumb</string>
+    <string name="left_big_toe_metacarpophalangeal">left big toe knuckle</string>
+    <string name="right_big_toe_metacarpophalangeal">right big toe knuckle</string>
+    <string name="left_index_toe_metacarpophalangeal">left index toe knuckle</string>
+    <string name="right_index_toe_metacarpophalangeal">right index toe knuckle</string>
+    <string name="left_middle_toe_metacarpophalangeal">left middle toe knuckle</string>
+    <string name="right_middle_toe_metacarpophalangeal">right middle toe knuckle</string>
+    <string name="left_4th_toe_metacarpophalangeal">left 4th toe knuckle</string>
+    <string name="right_4th_toe_metacarpophalangeal">right 4th toe knuckle</string>
+    <string name="left_little_toe_metacarpophalangeal">left little toe knuckle</string>
+    <string name="right_little_toe_metacarpophalangeal">right little toe knuckle</string>
+    <string name="left_big_toe_interphalangeal">left big toe</string>
+    <string name="right_big_toe_interphalangeal">right big toe</string>
+    <string name="left_index_toe_interphalangeal">left index toe</string>
+    <string name="right_index_toe_interphalangeal">right index toe</string>
+    <string name="left_middle_toe_interphalangeal">left middle toe</string>
+    <string name="right_middle_toe_interphalangeal">right middle toe</string>
+    <string name="left_4th_toe_interphalangeal">left 4th toe</string>
+    <string name="right_4th_toe_interphalangeal">right 4th toe</string>
+    <string name="left_little_toe_interphalangeal">left little toe</string>
+    <string name="right_little_toe_interphalangeal">right little toe</string>
+    <string name="left_wrist">left wrist</string>
+    <string name="right_wrist">right wrist</string>
+
+    <string name="left_ankle_key" translatable="false">left_ankle</string>
+    <string name="right_ankle_key" translatable="false">right_ankle</string>
+    <string name="right_midfoot_key" translatable="false">right_midfoot</string>
+    <string name="left_midfoot_key" translatable="false">left_midfoot</string>
+    <string name="left_elbow_key" translatable="false">left_elbow</string>
+    <string name="right_elbow_key" translatable="false">right_elbow</string>
+    <string name="left_index_finger_metacarpophalangeal_key" translatable="false">left_index_finger_metacarpophalangeal</string>
+    <string name="right_index_finger_metacarpophalangeal_key" translatable="false">right_index_finger_metacarpophalangeal</string>
+    <string name="left_middle_finger_metacarpophalangeal_key" translatable="false">left_middle_finger_metacarpophalangeal</string>
+    <string name="right_middle_finger_metacarpophalangeal_key" translatable="false">right_middle_finger_metacarpophalangeal</string>
+    <string name="left_ring_finger_metacarpophalangeal_key" translatable="false">left_ring_finger_metacarpophalangeal</string>
+    <string name="right_ring_finger_metacarpophalangeal_key" translatable="false">right_ring_finger_metacarpophalangeal</string>
+    <string name="left_little_finger_metacarpophalangeal_key" translatable="false">left_little_finger_metacarpophalangeal</string>
+    <string name="right_little_finger_metacarpophalangeal_key" translatable="false">right_little_finger_metacarpophalangeal</string>
+    <string name="left_index_finger_interphalangeal_key" translatable="false">left_index_finger_interphalangeal</string>
+    <string name="right_index_finger_interphalangeal_key" translatable="false">right_index_finger_interphalangeal</string>
+    <string name="left_middle_finger_interphalangeal_key" translatable="false">left_middle_finger_interphalangeal</string>
+    <string name="right_middle_finger_interphalangeal_key" translatable="false">right_middle_finger_interphalangeal</string>
+    <string name="left_ring_finger_interphalangeal_key" translatable="false">left_ring_finger_interphalangeal</string>
+    <string name="right_ring_finger_interphalangeal_key" translatable="false">right_ring_finger_interphalangeal</string>
+    <string name="left_little_finger_interphalangeal_key" translatable="false">left_little_finger_interphalangeal</string>
+    <string name="right_little_finger_interphalangeal_key" translatable="false">right_little_finger_interphalangeal</string>
+    <string name="left_hip_key" translatable="false">left_hip</string>
+    <string name="right_hip_key" translatable="false">right_hip</string>
+    <string name="left_groin_key" translatable="false">left_groin</string>
+    <string name="right_groin_key" translatable="false">right_groin</string>
+    <string name="left_jaw_key" translatable="false">left_jaw</string>
+    <string name="right_jaw_key" translatable="false">right_jaw</string>
+    <string name="left_knee_key" translatable="false">left_knee</string>
+    <string name="right_knee_key" translatable="false">right_knee</string>
+    <string name="left_shoulder_key" translatable="false">left_shoulder</string>
+    <string name="right_shoulder_key" translatable="false">right_shoulder</string>
+    <string name="cervical_spine_key" translatable="false">cervical_spine</string>
+    <string name="thoratic_spine_key" translatable="false">thoratic_spine</string>
+    <string name="lumbar_spine_key" translatable="false">lumbar_spine</string>
+    <string name="left_thumb_metacarpophalangeal_key" translatable="false">left_thumb_metacarpophalangeal</string>
+    <string name="right_thumb_metacarpophalangeal_key" translatable="false">right_thumb_metacarpophalangeal</string>
+    <string name="left_thumb_interphalangeal_key" translatable="false">left_thumb_interphalangeal</string>
+    <string name="right_thumb_interphalangeal_key" translatable="false">right_thumb_interphalangeal</string>
+    <string name="left_big_toe_metacarpophalangeal_key" translatable="false">left_big_toe_metacarpophalangeal</string>
+    <string name="right_big_toe_metacarpophalangeal_key" translatable="false">right_big_toe_metacarpophalangeal</string>
+    <string name="left_index_toe_metacarpophalangeal_key" translatable="false">left_index_toe_metacarpophalangeal</string>
+    <string name="right_index_toe_metacarpophalangeal_key" translatable="false">right_index_toe_metacarpophalangeal</string>
+    <string name="left_middle_toe_metacarpophalangeal_key" translatable="false">left_middle_toe_metacarpophalangeal</string>
+    <string name="right_middle_toe_metacarpophalangeal_key" translatable="false">right_middle_toe_metacarpophalangeal</string>
+    <string name="left_4th_toe_metacarpophalangeal_key" translatable="false">left_4th_toe_metacarpophalangeal</string>
+    <string name="right_4th_toe_metacarpophalangeal_key" translatable="false">right_4th_toe_metacarpophalangeal</string>
+    <string name="left_little_toe_metacarpophalangeal_key" translatable="false">left_little_toe_metacarpophalangeal</string>
+    <string name="right_little_toe_metacarpophalangeal_key" translatable="false">right_little_toe_metacarpophalangeal</string>
+    <string name="left_big_toe_interphalangeal_key" translatable="false">left_big_toe_interphalangeal</string>
+    <string name="right_big_toe_interphalangeal_key" translatable="false">right_big_toe_interphalangeal</string>
+    <string name="left_index_toe_interphalangeal_key" translatable="false">left_index_toe_interphalangeal</string>
+    <string name="right_index_toe_interphalangeal_key" translatable="false">right_index_toe_interphalangeal</string>
+    <string name="left_middle_toe_interphalangeal_key" translatable="false">left_middle_toe_interphalangeal</string>
+    <string name="right_middle_toe_interphalangeal_key" translatable="false">right_middle_toe_interphalangeal</string>
+    <string name="left_4th_toe_interphalangeal_key" translatable="false">left_4th_toe_interphalangeal</string>
+    <string name="right_4th_toe_interphalangeal_key" translatable="false">right_4th_toe_interphalangeal</string>
+    <string name="left_little_toe_interphalangeal_key" translatable="false">left_little_toe_interphalangeal</string>
+    <string name="right_little_toe_interphalangeal_key" translatable="false">right_little_toe_interphalangeal</string>
+    <string name="left_wrist_key" translatable="false">left_wrist</string>
+    <string name="right_wrist_key" translatable="false">right_wrist</string>
+</resources>
