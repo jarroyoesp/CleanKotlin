@@ -23,4 +23,5 @@
     <dimen name="body_tiny_textsize">@dimen/text_tiny</dimen>
     <dimen name="body_mid_textsize">@dimen/text_small</dimen>
     <dimen name="body_zoomable_padding">@dimen/general_padding</dimen>
+    <dimen name="general_space_elements">10dp</dimen>
 </resources>

@@ -8,10 +8,15 @@ import es.jarroyo.daggerandkotlin.app.di.component.ApplicationComponent
 import es.jarroyo.daggerandkotlin.app.di.subcomponent.body.BodyActivityModule
 import es.jarroyo.daggerandkotlin.ui.base.BaseActivity
 import es.jarroyo.daggerandkotlin.ui.base.toast
+import es.jarroyo.daggerandkotlin.ui.body.BodyPartDisplayModel
+import es.jarroyo.daggerandkotlin.ui.body.fragment.BottomSheetPainFragment
 import es.jarroyo.daggerandkotlin.ui.body.presenter.BodyPresenter
 import javax.inject.Inject
 
-class BodyActivity : BaseActivity(), BodyView {
+
+
+class BodyActivity : BaseActivity(), BodyView, BottomSheetPainFragment.OnClickSavePain {
+
 
 
     override var layoutId: Int = R.layout.activity_body
@@ -64,8 +69,12 @@ class BodyActivity : BaseActivity(), BodyView {
              R.id.right_knee,
              R.id.left_knee)
     fun onViewClicked(view: View) {
-        var text: String? = view?.tag?.toString()
-        toast(text)
+        var textBodyPart: String? = view?.tag?.toString()
+
+        var bodyPart = BodyPartDisplayModel(1, textBodyPart, 1)
+        val bottomSheetDialogFragment = BottomSheetPainFragment.newInstance(bodyPart)
+        bottomSheetDialogFragment.show(supportFragmentManager, bottomSheetDialogFragment.getTag())
+
         when (view.id) {
 
 
@@ -75,6 +84,10 @@ class BodyActivity : BaseActivity(), BodyView {
                     input_email.text(),
                     input_password.text())*/
         }
+    }
+
+    override fun savePain(bodyPart: BodyPartDisplayModel) {
+        toast(bodyPart.nameBodyPart+bodyPart.painLevel)
     }
 
 }

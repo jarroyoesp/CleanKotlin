@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/general_padding">
+
+    <TextView
+        android:id="@+id/fragmentSelectPainTvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/fragmentSelectPainTvPainLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/general_space_elements"
+        android:layout_below="@+id/fragmentSelectPainTvTitle"/>
+
+    <SeekBar
+        android:id="@+id/fragmentSelectPainseekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="10"
+        android:layout_marginTop="@dimen/general_space_elements"
+        android:layout_below="@+id/fragmentSelectPainTvPainLevel" />
+
+    <Button
+        android:id="@+id/fragmentSelectPainButtonSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/general_space_elements"
+        android:layout_below="@+id/fragmentSelectPainseekBar"
+        android:text="@string/save" />
+
+
+</RelativeLayout>
