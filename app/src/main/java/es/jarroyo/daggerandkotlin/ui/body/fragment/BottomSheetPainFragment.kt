@@ -7,10 +7,8 @@ import android.view.View
 import android.widget.Button
 import android.widget.SeekBar
 import android.widget.TextView
-import butterknife.OnClick
 import es.jarroyo.daggerandkotlin.R
 import es.jarroyo.daggerandkotlin.ui.body.BodyPartDisplayModel
-import kotlinx.android.synthetic.main.fragment_bottomsheet_select_pain.*
 
 class BottomSheetPainFragment() : BottomSheetDialogFragment() {
 
@@ -66,7 +64,7 @@ class BottomSheetPainFragment() : BottomSheetDialogFragment() {
         mSeekBar.progress = mBodyPart.painLevel
 
         mButtonSave.setOnClickListener { v -> savePainLevel() }
-        
+
         mSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onStartTrackingTouch(p0: SeekBar?) {
             }
