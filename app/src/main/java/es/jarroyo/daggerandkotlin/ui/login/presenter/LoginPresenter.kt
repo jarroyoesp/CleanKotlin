@@ -41,6 +41,11 @@ class LoginPresenter (override val view: LoginView,
         clearView()
     }
 
+    override fun onNetworkServiceError() {
+        view.showIncorrectLoginUserDataError()
+        clearView()
+    }
+
     /**
      * LOGIN RESPONSE OVERRIDE
      */

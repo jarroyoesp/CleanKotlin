@@ -2,7 +2,7 @@ package es.jarroyo.daggerandkotlin.app.navigator
 
 import android.content.Intent
 import es.jarroyo.daggerandkotlin.ui.base.BaseActivity
-import es.jarroyo.daggerandkotlin.ui.home.activity.HomeActivity
+import es.jarroyo.daggerandkotlin.ui.body.activity.BodyActivity
 import es.jarroyo.daggerandkotlin.ui.login.activity.LoginActivity
 import es.jarroyo.daggerandkotlin.ui.signup.activity.SignUpActivity
 
@@ -35,7 +35,7 @@ class Navigator {
     }
 
     fun toMain() {
-        toDefaultActivityCleaningStack(HomeActivity::class.java)
+        toDefaultActivityCleaningStack(BodyActivity::class.java)
     }
 
     fun toSignUp() {

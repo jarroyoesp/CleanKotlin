@@ -31,17 +31,20 @@ class NetworkDataSource(private var networkClientManager: NetworkClientManager,
         return Response(networkGetHomeResponseToHomeEntityMapper.map(networkResponse.data!!))
     }
 
+    /***********************************************************************************************
+     * LOGIN
+     **********************************************************************************************/
     fun login(request: LoginRequest): Response<UserEntity> {
         val networkResponse = NetworkLoginRequest( request, networkClientManager).run()
 
-        if (!networkResponse.isSuccessful) {
+        if (networkResponse.isSuccessful) {
+            return Response(UserEntity("1", "Name", "Surname", "photo", "email@arroyo.com"))
+        } else {
             if (networkResponse.error?.error
-                    .equals(NetworkError.Code.INCORRECT_AUTHENTICATION_CREDENTIALS.toString())) {
+                            .equals(NetworkError.Code.INCORRECT_AUTHENTICATION_CREDENTIALS.toString())) {
                 throw IncorrectAuthenticationCredentialsException()
             }
             throw NetworkServiceException()
-        } else {
-            return Response(UserEntity("1", "Name", "Surname", "photo", "email@arroyo.com"))
         }
     }
 
