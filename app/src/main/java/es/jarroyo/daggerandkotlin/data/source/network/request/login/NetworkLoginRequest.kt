@@ -6,8 +6,7 @@ import com.google.firebase.auth.FirebaseAuth
 import es.jarroyo.daggerandkotlin.data.source.network.manager.NetworkClientManager
 import es.jarroyo.daggerandkotlin.data.source.network.model.NetworkError
 import es.jarroyo.daggerandkotlin.data.source.network.model.NetworkResponse
-import es.jarroyo.daggerandkotlin.data.source.network.request.signup.NetworkData
-import es.jarroyo.daggerandkotlin.data.source.network.request.signup.NetworkSignUpResponse
+import es.jarroyo.daggerandkotlin.data.source.network.request.base.auth.NetworkUserAuthenticationResponse
 import es.jarroyo.daggerandkotlin.domain.usecase.login.LoginRequest
 
 
@@ -19,13 +18,12 @@ class NetworkLoginRequest(private val loginRequest: LoginRequest,
 
     private val auth: FirebaseAuth = FirebaseAuth.getInstance()
 
-    fun run(): NetworkResponse<NetworkSignUpResponse> {
+    fun run(): NetworkResponse<NetworkUserAuthenticationResponse> {
 
         // Usuario ya logueado
         if (auth.currentUser != null) {
-            var networkData: NetworkData = NetworkData(auth.currentUser.toString())
-            var networkSignUpResponse: NetworkSignUpResponse = NetworkSignUpResponse(networkData)
-            var networkResponse: NetworkResponse<NetworkSignUpResponse> = NetworkResponse<NetworkSignUpResponse>(networkSignUpResponse)
+            var networkUserAuthenticationResponse = NetworkUserAuthenticationResponse(auth.uid!!)
+            var networkResponse = NetworkResponse<NetworkUserAuthenticationResponse>(networkUserAuthenticationResponse)
 
             return networkResponse
         }
@@ -37,9 +35,8 @@ class NetworkLoginRequest(private val loginRequest: LoginRequest,
 
             if (response.isSuccessful) {
 
-                var networkData: NetworkData = NetworkData("User")
-                var networkSignUpResponse: NetworkSignUpResponse = NetworkSignUpResponse(networkData)
-                var networkResponse: NetworkResponse<NetworkSignUpResponse> = NetworkResponse<NetworkSignUpResponse>(networkSignUpResponse)
+                var networkUserAuthenticationResponse = NetworkUserAuthenticationResponse(auth.uid!!)
+                var networkResponse = NetworkResponse<NetworkUserAuthenticationResponse>(networkUserAuthenticationResponse)
 
                 return networkResponse
             }
@@ -49,16 +46,15 @@ class NetworkLoginRequest(private val loginRequest: LoginRequest,
 
                 var responseAnonim: Task<AuthResult> = auth.signInAnonymously()
                 if (responseAnonim.isSuccessful) {
-                    var networkData: NetworkData = NetworkData("User")
-                    var networkSignUpResponse: NetworkSignUpResponse = NetworkSignUpResponse(networkData)
-                    var networkResponse: NetworkResponse<NetworkSignUpResponse> = NetworkResponse<NetworkSignUpResponse>(networkSignUpResponse)
+                    var networkUserAuthenticationResponse = NetworkUserAuthenticationResponse(auth.uid!!)
+                    var networkResponse = NetworkResponse<NetworkUserAuthenticationResponse>(networkUserAuthenticationResponse)
 
                     return networkResponse
                 } else {
                     // Devolvemos error
                     val networkError: NetworkError = NetworkError()
                     networkError.error = responseAnonim.exception.toString()
-                    val networkResponse: NetworkResponse<NetworkSignUpResponse> = NetworkResponse<NetworkSignUpResponse>(null, networkError)
+                    var networkResponse = NetworkResponse<NetworkUserAuthenticationResponse>(null, networkError)
 
                     return networkResponse
                 }

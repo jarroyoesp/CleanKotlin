@@ -3,8 +3,10 @@ package es.jarroyo.daggerandkotlin.app.di.module
 import dagger.Module
 import dagger.Provides
 import es.jarroyo.daggerandkotlin.data.mapper.HomeEntityDataMapper
+import es.jarroyo.daggerandkotlin.data.mapper.NetworkAuthenticationResponseToUserEntityMapper
 import es.jarroyo.daggerandkotlin.data.mapper.NetworkGetHomeResponseToHomeEntityMapper
 import es.jarroyo.daggerandkotlin.data.mapper.UserEntityDataMapper
+import es.jarroyo.daggerandkotlin.data.source.cache.CacheDataSource
 import es.jarroyo.daggerandkotlin.data.source.network.NetworkDataSource
 import es.jarroyo.daggerandkotlin.data.source.network.manager.NetworkClientManager
 import javax.inject.Singleton
@@ -13,8 +15,15 @@ import javax.inject.Singleton
 class DataModule {
 
     @Provides @Singleton
-    fun provideNetworkDataSource(networkClientManager: NetworkClientManager, networkGetHomeResponseToHomeEntityMapper: NetworkGetHomeResponseToHomeEntityMapper)
-            = NetworkDataSource(networkClientManager, networkGetHomeResponseToHomeEntityMapper)
+    fun provideNetworkDataSource(networkClientManager: NetworkClientManager,
+                                 networkAuthenticationResponseToUserEntityMapper: NetworkAuthenticationResponseToUserEntityMapper,
+                                 networkGetHomeResponseToHomeEntityMapper: NetworkGetHomeResponseToHomeEntityMapper)
+            = NetworkDataSource(networkClientManager, networkAuthenticationResponseToUserEntityMapper, networkGetHomeResponseToHomeEntityMapper)
+
+    @Provides
+    @Singleton
+    fun provideCacheDataSource()
+            = CacheDataSource()
 
     @Provides
     @Singleton
@@ -35,5 +44,10 @@ class DataModule {
     @Singleton
     fun provideHomeEntityDataMapper()
             = HomeEntityDataMapper()
+
+    @Provides
+    @Singleton
+    fun provideNetworkAuthenticationResponseToUserEntityMapper()
+            = NetworkAuthenticationResponseToUserEntityMapper()
 
 }

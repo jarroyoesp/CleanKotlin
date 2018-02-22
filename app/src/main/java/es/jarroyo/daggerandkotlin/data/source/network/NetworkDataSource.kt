@@ -5,6 +5,7 @@ import es.jarroyo.daggerandkotlin.data.entity.UserEntity
 import es.jarroyo.daggerandkotlin.data.exception.IncorrectAuthenticationCredentialsException
 import es.jarroyo.daggerandkotlin.data.exception.NetworkServiceException
 import es.jarroyo.daggerandkotlin.data.exception.UserAlreadyExistsException
+import es.jarroyo.daggerandkotlin.data.mapper.NetworkAuthenticationResponseToUserEntityMapper
 import es.jarroyo.daggerandkotlin.data.mapper.NetworkGetHomeResponseToHomeEntityMapper
 import es.jarroyo.daggerandkotlin.data.source.network.manager.NetworkClientManager
 import es.jarroyo.daggerandkotlin.data.source.network.model.NetworkError
@@ -21,7 +22,7 @@ import es.jarroyo.daggerandkotlin.domain.usecase.signUp.SignUpRequest
 
 
 class NetworkDataSource(private var networkClientManager: NetworkClientManager,
-        /*private val networkAuthenticationResponseToUserEntityMapper: NetworkAuthenticationResponseToUserEntityMapper,*/
+                        private val networkAuthenticationResponseToUserEntityMapper: NetworkAuthenticationResponseToUserEntityMapper,
                         private val networkGetHomeResponseToHomeEntityMapper: NetworkGetHomeResponseToHomeEntityMapper) {
 
     fun getHome(request: GetHomeRequest): Response<List<HomeEntity>> {
@@ -41,7 +42,7 @@ class NetworkDataSource(private var networkClientManager: NetworkClientManager,
         val networkResponse = NetworkLoginRequest(request, networkClientManager).run()
 
         if (networkResponse.isSuccessful) {
-            return Response(UserEntity("1", "Name", "Surname", "photo", "email@arroyo.com"))
+            return Response(networkAuthenticationResponseToUserEntityMapper.map(networkResponse.data!!))
         } else {
             if (networkResponse.error?.error
                             .equals(NetworkError.Code.INCORRECT_AUTHENTICATION_CREDENTIALS.toString())) {
