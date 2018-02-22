@@ -33,10 +33,20 @@ class BodyActivity : BaseActivity(), BodyView, BottomSheetPainFragment.OnClickSa
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        presenter.getPainBodyParts()
     }
 
-    override fun setBodyParts() {
-        toast("On Save Pain")
+    override fun onPainBodyPartsReceived(painBodyList: List<BodyPart>) {
+        // Mostramos el dolor en cada una de las partes del cuerpo
+        for(bodyPart: BodyPart in painBodyList){
+            var bodyPartDisplayModel = BodyPartDisplayModel()
+            bodyPartDisplayModel.id = bodyPart.id
+            bodyPartDisplayModel.nameBodyPart = bodyPart.name
+            bodyPartDisplayModel.painLevel = bodyPart.painLevel
+
+            showPainInBodyPart(bodyPartDisplayModel)
+        }
     }
 
     override fun onSavePain() {
@@ -48,7 +58,7 @@ class BodyActivity : BaseActivity(), BodyView, BottomSheetPainFragment.OnClickSa
     }
 
     override fun hideBodyLoading() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
 
@@ -77,7 +87,7 @@ class BodyActivity : BaseActivity(), BodyView, BottomSheetPainFragment.OnClickSa
     fun onViewClicked(view: View) {
         var textBodyPart: String? = view?.tag?.toString()
 
-        var bodyPart = BodyPartDisplayModel(1, textBodyPart, 1)
+        var bodyPart = BodyPartDisplayModel("1", textBodyPart, 1)
         val bottomSheetDialogFragment = BottomSheetPainFragment.newInstance(bodyPart)
         bottomSheetDialogFragment.show(supportFragmentManager, bottomSheetDialogFragment.getTag())
     }

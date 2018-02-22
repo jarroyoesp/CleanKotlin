@@ -10,11 +10,13 @@ import es.jarroyo.daggerandkotlin.data.mapper.NetworkGetHomeResponseToHomeEntity
 import es.jarroyo.daggerandkotlin.data.source.network.manager.NetworkClientManager
 import es.jarroyo.daggerandkotlin.data.source.network.model.NetworkError
 import es.jarroyo.daggerandkotlin.data.source.network.request.body.NetworkBodyRequest
+import es.jarroyo.daggerandkotlin.data.source.network.request.body.getPain.NetworkGetPainRequest
 import es.jarroyo.daggerandkotlin.data.source.network.request.getHome.NetworkGetHomeRequest
 import es.jarroyo.daggerandkotlin.data.source.network.request.login.NetworkLoginRequest
 import es.jarroyo.daggerandkotlin.data.source.network.request.signup.NetworkSignUpRequest
 import es.jarroyo.daggerandkotlin.domain.model.BodyPart
 import es.jarroyo.daggerandkotlin.domain.usecase.base.Response
+import es.jarroyo.daggerandkotlin.domain.usecase.body.get.GetPainRequest
 import es.jarroyo.daggerandkotlin.domain.usecase.body.save.SavePainRequest
 import es.jarroyo.daggerandkotlin.domain.usecase.home.GetHomeRequest
 import es.jarroyo.daggerandkotlin.domain.usecase.login.LoginRequest
@@ -67,6 +69,25 @@ class NetworkDataSource(private var networkClientManager: NetworkClientManager,
         //return Response(networkAuthenticationResponseToUserEntityMapper.map(networkResponse.data!!))
     }
 
+    /***********************************************************************************************
+     * GET PAIN
+     **********************************************************************************************/
+    fun getPain(request: GetPainRequest): Response<List<BodyPart>> {
+
+        val networkResponse = NetworkGetPainRequest(request, networkClientManager).run()
+        if (networkResponse.isSuccessful) {
+            /*var bodyPartList = mutableListOf<BodyPart>()
+
+            var bodyPart1 = BodyPart("1", "right_elbow", 4)
+            var bodyPart2 = BodyPart("1", "left_elbow", 7)
+            bodyPartList.add(bodyPart1)
+            bodyPartList.add(bodyPart2)*/
+
+            return Response(networkResponse.data!!.bodyPartList)
+        } else {
+            throw NetworkServiceException()
+        }
+    }
 
     /***********************************************************************************************
      * SAVE PAIN
