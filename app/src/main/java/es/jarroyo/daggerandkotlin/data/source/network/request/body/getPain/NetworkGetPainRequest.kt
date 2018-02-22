@@ -24,25 +24,6 @@ class NetworkGetPainRequest(private val getPainRequest: GetPainRequest,
     fun run(): NetworkResponse<NetworkGetPainResponse> {
         mDatabase = FirebaseDatabase.getInstance().getReference("BodyPartsPain/"+getPainRequest.userId)
 
-        /*val postListener = object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val menu: MutableList<BodyPart> = mutableListOf()
-                dataSnapshot.children.mapNotNullTo(menu) { it.getValue<BodyPart>(BodyPart::class.java) }
-            }
-
-            override fun onCancelled(databaseError: DatabaseError) {
-                // Getting Post failed, log a message
-                Log.w(TAG, "loadPost:onCancelled", databaseError.toException())
-                // ...
-            }
-        }
-
-        mDatabase.addValueEventListener(postListener)
-
-        var networkBodyResponse = NetworkBodyResponse("Hola")
-        var response: NetworkResponse<NetworkBodyResponse> = NetworkResponse(networkBodyResponse)
-        return response*/
-
         val tcs = TaskCompletionSource<List<BodyPart>>()
         val postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {

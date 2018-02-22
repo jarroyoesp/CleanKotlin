@@ -76,13 +76,6 @@ class NetworkDataSource(private var networkClientManager: NetworkClientManager,
 
         val networkResponse = NetworkGetPainRequest(request, networkClientManager).run()
         if (networkResponse.isSuccessful) {
-            /*var bodyPartList = mutableListOf<BodyPart>()
-
-            var bodyPart1 = BodyPart("1", "right_elbow", 4)
-            var bodyPart2 = BodyPart("1", "left_elbow", 7)
-            bodyPartList.add(bodyPart1)
-            bodyPartList.add(bodyPart2)*/
-
             return Response(networkResponse.data!!.bodyPartList)
         } else {
             throw NetworkServiceException()
