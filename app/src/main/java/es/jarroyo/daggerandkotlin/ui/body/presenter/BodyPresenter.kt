@@ -2,9 +2,9 @@ package es.jarroyo.daggerandkotlin.ui.body.presenter
 
 import es.jarroyo.daggerandkotlin.app.navigator.Navigator
 import es.jarroyo.daggerandkotlin.domain.model.BodyPart
-import es.jarroyo.daggerandkotlin.domain.usecase.body.SavePainRequest
-import es.jarroyo.daggerandkotlin.domain.usecase.body.SavePainResponse
-import es.jarroyo.daggerandkotlin.domain.usecase.body.SavePainUseCase
+import es.jarroyo.daggerandkotlin.domain.usecase.body.save.SavePainRequest
+import es.jarroyo.daggerandkotlin.domain.usecase.body.save.SavePainResponse
+import es.jarroyo.daggerandkotlin.domain.usecase.body.save.SavePainUseCase
 import es.jarroyo.daggerandkotlin.ui.base.Presenter
 import es.jarroyo.daggerandkotlin.ui.body.activity.BodyView
 

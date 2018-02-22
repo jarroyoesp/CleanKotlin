@@ -3,7 +3,7 @@ package es.jarroyo.daggerandkotlin.data.source.network.request.body
 import com.google.firebase.database.FirebaseDatabase
 import es.jarroyo.daggerandkotlin.data.source.network.manager.NetworkClientManager
 import es.jarroyo.daggerandkotlin.data.source.network.model.NetworkResponse
-import es.jarroyo.daggerandkotlin.domain.usecase.body.SavePainRequest
+import es.jarroyo.daggerandkotlin.domain.usecase.body.save.SavePainRequest
 
 
 /**

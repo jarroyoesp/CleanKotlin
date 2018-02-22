@@ -5,7 +5,7 @@ import dagger.Provides
 import es.jarroyo.daggerandkotlin.data.repository.BodyPartRepository
 import es.jarroyo.daggerandkotlin.data.repository.HomeRepository
 import es.jarroyo.daggerandkotlin.data.repository.UserRepository
-import es.jarroyo.daggerandkotlin.domain.usecase.body.SavePainUseCase
+import es.jarroyo.daggerandkotlin.domain.usecase.body.save.SavePainUseCase
 import es.jarroyo.daggerandkotlin.domain.usecase.executor.MainThread
 import es.jarroyo.daggerandkotlin.domain.usecase.executor.UseCaseExecutor
 import es.jarroyo.daggerandkotlin.domain.usecase.home.GetHomeUseCase

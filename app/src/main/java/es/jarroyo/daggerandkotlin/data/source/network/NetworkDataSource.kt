@@ -15,7 +15,7 @@ import es.jarroyo.daggerandkotlin.data.source.network.request.login.NetworkLogin
 import es.jarroyo.daggerandkotlin.data.source.network.request.signup.NetworkSignUpRequest
 import es.jarroyo.daggerandkotlin.domain.model.BodyPart
 import es.jarroyo.daggerandkotlin.domain.usecase.base.Response
-import es.jarroyo.daggerandkotlin.domain.usecase.body.SavePainRequest
+import es.jarroyo.daggerandkotlin.domain.usecase.body.save.SavePainRequest
 import es.jarroyo.daggerandkotlin.domain.usecase.home.GetHomeRequest
 import es.jarroyo.daggerandkotlin.domain.usecase.login.LoginRequest
 import es.jarroyo.daggerandkotlin.domain.usecase.signUp.SignUpRequest

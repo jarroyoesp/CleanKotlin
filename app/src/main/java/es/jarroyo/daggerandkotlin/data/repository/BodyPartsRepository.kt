@@ -4,7 +4,7 @@ import es.jarroyo.daggerandkotlin.data.source.cache.CacheDataSource
 import es.jarroyo.daggerandkotlin.data.source.network.NetworkDataSource
 import es.jarroyo.daggerandkotlin.domain.model.BodyPart
 import es.jarroyo.daggerandkotlin.domain.usecase.base.Response
-import es.jarroyo.daggerandkotlin.domain.usecase.body.SavePainRequest
+import es.jarroyo.daggerandkotlin.domain.usecase.body.save.SavePainRequest
 
 
 class BodyPartRepository(private val networkDataSource: NetworkDataSource,

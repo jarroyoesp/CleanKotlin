@@ -1,8 +1,10 @@
-package es.jarroyo.daggerandkotlin.domain.usecase.body
+package es.jarroyo.daggerandkotlin.domain.usecase.body.save
 
 import es.jarroyo.daggerandkotlin.data.repository.BodyPartRepository
 import es.jarroyo.daggerandkotlin.domain.model.BodyPart
 import es.jarroyo.daggerandkotlin.domain.usecase.base.BaseUseCase
+import es.jarroyo.daggerandkotlin.domain.usecase.body.save.SavePainRequest
+import es.jarroyo.daggerandkotlin.domain.usecase.body.save.SavePainResponse
 import es.jarroyo.daggerandkotlin.domain.usecase.executor.MainThread
 import es.jarroyo.daggerandkotlin.domain.usecase.executor.UseCaseExecutor
 
