@@ -98,14 +98,15 @@ dependencies {
 
     compile 'com.squareup.picasso:picasso:' + rootProject.ext.picassoVersion
 
-    compile 'com.google.firebase:firebase-core:'+ rootProject.ext.playServicesVersion
-    compile 'com.google.firebase:firebase-database:'+ rootProject.ext.playServicesVersion
+    compile 'com.google.firebase:firebase-core:' + rootProject.ext.playServicesVersion
+    compile 'com.google.firebase:firebase-database:' + rootProject.ext.playServicesVersion
 
 }
 
 kapt {
     generateStubs = true
 }
+
 
 
 

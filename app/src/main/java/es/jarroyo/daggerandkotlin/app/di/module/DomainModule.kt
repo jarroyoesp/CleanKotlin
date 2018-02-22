@@ -9,6 +9,7 @@ import es.jarroyo.daggerandkotlin.domain.usecase.body.get.GetPainUseCase
 import es.jarroyo.daggerandkotlin.domain.usecase.body.save.SavePainUseCase
 import es.jarroyo.daggerandkotlin.domain.usecase.executor.MainThread
 import es.jarroyo.daggerandkotlin.domain.usecase.executor.UseCaseExecutor
+import es.jarroyo.daggerandkotlin.domain.usecase.getCurrentUser.GetCurrentUserUseCase
 import es.jarroyo.daggerandkotlin.domain.usecase.home.GetHomeUseCase
 import es.jarroyo.daggerandkotlin.domain.usecase.login.LoginUseCase
 import es.jarroyo.daggerandkotlin.domain.usecase.signUp.SignUpUseCase
@@ -41,4 +42,9 @@ class DomainModule {
     fun provideGetPainUseCase(bodyPartRepository: BodyPartRepository, executor: UseCaseExecutor,
                                mainThread: MainThread)
             = GetPainUseCase(bodyPartRepository, executor, mainThread)
+
+    @Provides
+    fun provideGetCurrentUserUseCase(userRepository: UserRepository, executor: UseCaseExecutor,
+                              mainThread: MainThread)
+            = GetCurrentUserUseCase(userRepository, executor, mainThread)
 }

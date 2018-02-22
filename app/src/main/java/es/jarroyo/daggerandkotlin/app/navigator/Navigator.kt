@@ -47,7 +47,7 @@ class Navigator {
     }
 
     fun toLoginCleaningStack() {
-       // toDefaultActivityCleaningStack(LoginActivity::class.java)
+        toDefaultActivityCleaningStack(LoginActivity::class.java)
     }
 
     fun finishActivity() {

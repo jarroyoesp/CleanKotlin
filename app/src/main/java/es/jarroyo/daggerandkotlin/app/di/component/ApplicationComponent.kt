@@ -13,6 +13,8 @@ import es.jarroyo.daggerandkotlin.app.di.subcomponent.login.LoginActivityCompone
 import es.jarroyo.daggerandkotlin.app.di.subcomponent.login.LoginActivityModule
 import es.jarroyo.daggerandkotlin.app.di.subcomponent.signup.SignUpActivityComponent
 import es.jarroyo.daggerandkotlin.app.di.subcomponent.signup.SignUpActivityModule
+import es.jarroyo.daggerandkotlin.app.di.subcomponent.splash.SplashActivityComponent
+import es.jarroyo.daggerandkotlin.app.di.subcomponent.splash.SplashActivityModule
 import javax.inject.Singleton
 
 /**
@@ -29,4 +31,5 @@ interface ApplicationComponent {
     fun plus(module: HomeActivityModule): HomeActivityComponent
     fun plus(module: SignUpActivityModule): SignUpActivityComponent
     fun plus(module: BodyActivityModule): BodyActivityComponent
+    fun plus(module: SplashActivityModule): SplashActivityComponent
 }
