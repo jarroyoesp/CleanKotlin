@@ -104,18 +104,22 @@ class BodyActivity : BaseActivity(), BodyView, BottomSheetPainFragment.OnClickSa
      */
     fun showPainInBodyPart(bodyPart: BodyPartDisplayModel) {
         var buttonBodyPart: Button = findViewById<Button>(findBodypartView(bodyPart))
-        buttonBodyPart?.text = bodyPart.painLevel.toString()
-        buttonBodyPart.visibility = View.VISIBLE
+        if (bodyPart.painLevel > 0) {
+            buttonBodyPart?.text = bodyPart.painLevel.toString()
+            buttonBodyPart.visibility = View.VISIBLE
 
-        var drawable = ContextCompat.getDrawable(this, R.drawable.body_circle_shape_colored)
-        DrawableCompat.setTint(drawable, ContextCompat.getColor(this, R.color.colorAccent))
-        buttonBodyPart?.background = drawable
+            var drawable = ContextCompat.getDrawable(this, R.drawable.body_circle_shape_colored)
+            DrawableCompat.setTint(drawable, ContextCompat.getColor(this, R.color.colorAccent))
+            buttonBodyPart?.background = drawable
 
 
-        val fadeInAnimation = AlphaAnimation(0f, 1f)
-        fadeInAnimation.duration = 1000
-        fadeInAnimation.fillAfter = true
-        buttonBodyPart.startAnimation(fadeInAnimation)
+            val fadeInAnimation = AlphaAnimation(0f, 1f)
+            fadeInAnimation.duration = 1000
+            fadeInAnimation.fillAfter = true
+            buttonBodyPart.startAnimation(fadeInAnimation)
+        } else {
+            buttonBodyPart.visibility = View.GONE
+        }
     }
 
     fun findBodypartView(bodyPart: BodyPartDisplayModel): Int {

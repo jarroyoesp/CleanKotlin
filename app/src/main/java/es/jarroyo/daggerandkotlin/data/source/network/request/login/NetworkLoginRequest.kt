@@ -1,5 +1,6 @@
 package es.jarroyo.daggerandkotlin.data.source.network.request.login
 
+import android.text.TextUtils
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
@@ -20,8 +21,29 @@ class NetworkLoginRequest(private val loginRequest: LoginRequest,
 
     fun run(): NetworkResponse<NetworkUserAuthenticationResponse> {
 
-        // Usuario ya logueado
-        if (auth.currentUser != null) {
+        // LOGIN NORMAL
+        if (!TextUtils.isEmpty(loginRequest.email) && !TextUtils.isEmpty(loginRequest.password)) {
+            var response: Task<AuthResult> = auth.signInWithEmailAndPassword(loginRequest.email,
+                    loginRequest.password)
+
+            if (response.isSuccessful) {
+
+                var networkUserAuthenticationResponse = NetworkUserAuthenticationResponse(auth.uid!!)
+                var networkResponse = NetworkResponse<NetworkUserAuthenticationResponse>(networkUserAuthenticationResponse)
+
+                return networkResponse
+            } else {
+                // Devolvemos error
+                val networkError: NetworkError = NetworkError()
+                networkError.error = response.exception.toString()
+                var networkResponse = NetworkResponse<NetworkUserAuthenticationResponse>(null, networkError)
+
+                return networkResponse
+            }
+        }
+
+        // Usuario anonimo ya logueado
+        else if (TextUtils.isEmpty(loginRequest.email) && TextUtils.isEmpty(loginRequest.password) && auth.currentUser != null) {
             var networkUserAuthenticationResponse = NetworkUserAuthenticationResponse(auth.uid!!)
             var networkResponse = NetworkResponse<NetworkUserAuthenticationResponse>(networkUserAuthenticationResponse)
 

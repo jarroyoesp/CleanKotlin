@@ -15,7 +15,7 @@ class SplashPresenter(override val view: SplashView,
                       val getCurrentUserUseCase: GetCurrentUserUseCase) :
         Presenter<SplashView>, GetCurrentUserResponse {
 
-    private val COUNT_DOWN_TIME: Long = 2000
+    private val COUNT_DOWN_TIME: Long = 1000
 
     fun loadInitialData() = Timer("SettingUp", false).schedule(COUNT_DOWN_TIME) {
         getCurrentUserUseCase.execute(response = this@SplashPresenter)

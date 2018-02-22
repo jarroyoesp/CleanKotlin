@@ -26,7 +26,7 @@ class LoginActivity : BaseActivity(), LoginView {
 
     }
 
-    @OnClick(R.id.text_recover_password, R.id.text_sign_in, R.id.button_login)
+    @OnClick(R.id.text_recover_password, R.id.text_sign_in, R.id.button_login, R.id.button_try_app)
     fun onViewClicked(view: View) {
         when (view.id) {
             R.id.text_recover_password -> presenter.navigateToRecoverPassword()
@@ -34,6 +34,7 @@ class LoginActivity : BaseActivity(), LoginView {
             R.id.button_login -> presenter.login(
                     input_email.text(),
                     input_password.text())
+            R.id.button_try_app -> presenter.login("", "")
         }
     }
 
