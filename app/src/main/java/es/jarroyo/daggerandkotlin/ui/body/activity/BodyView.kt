@@ -8,6 +8,8 @@ import es.jarroyo.daggerandkotlin.ui.base.PresentationView
 interface BodyView: PresentationView {
     fun setBodyParts()
 
+    fun onSavePain()
+
     fun showBodyLoading()
 
     fun hideBodyLoading()

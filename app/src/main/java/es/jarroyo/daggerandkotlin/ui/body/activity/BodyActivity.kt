@@ -10,7 +10,9 @@ import butterknife.OnClick
 import es.jarroyo.daggerandkotlin.R
 import es.jarroyo.daggerandkotlin.app.di.component.ApplicationComponent
 import es.jarroyo.daggerandkotlin.app.di.subcomponent.body.BodyActivityModule
+import es.jarroyo.daggerandkotlin.domain.model.BodyPart
 import es.jarroyo.daggerandkotlin.ui.base.BaseActivity
+import es.jarroyo.daggerandkotlin.ui.base.toast
 import es.jarroyo.daggerandkotlin.ui.body.BodyPartDisplayModel
 import es.jarroyo.daggerandkotlin.ui.body.fragment.BottomSheetPainFragment
 import es.jarroyo.daggerandkotlin.ui.body.presenter.BodyPresenter
@@ -18,8 +20,6 @@ import javax.inject.Inject
 
 
 class BodyActivity : BaseActivity(), BodyView, BottomSheetPainFragment.OnClickSavePain {
-
-
 
     override var layoutId: Int = R.layout.activity_body
 
@@ -36,7 +36,11 @@ class BodyActivity : BaseActivity(), BodyView, BottomSheetPainFragment.OnClickSa
     }
 
     override fun setBodyParts() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        toast("On Save Pain")
+    }
+
+    override fun onSavePain() {
+        toast("OK: OnSavePain")
     }
 
     override fun showBodyLoading() {
@@ -78,8 +82,11 @@ class BodyActivity : BaseActivity(), BodyView, BottomSheetPainFragment.OnClickSa
         bottomSheetDialogFragment.show(supportFragmentManager, bottomSheetDialogFragment.getTag())
     }
 
-    override fun savePain(bodyPart: BodyPartDisplayModel) {
-        showPainInBodyPart(bodyPart)
+    override fun savePain(bodyPartDisplay: BodyPartDisplayModel) {
+        showPainInBodyPart(bodyPartDisplay)
+
+        var bodyPart = BodyPart(bodyPartDisplay.id.toString(), bodyPartDisplay.nameBodyPart, bodyPartDisplay.painLevel)
+        presenter.savePainBodyPart(bodyPart)
     }
 
     /**

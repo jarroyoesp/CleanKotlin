@@ -2,8 +2,10 @@ package es.jarroyo.daggerandkotlin.app.di.module
 
 import dagger.Module
 import dagger.Provides
+import es.jarroyo.daggerandkotlin.data.repository.BodyPartRepository
 import es.jarroyo.daggerandkotlin.data.repository.HomeRepository
 import es.jarroyo.daggerandkotlin.data.repository.UserRepository
+import es.jarroyo.daggerandkotlin.domain.usecase.body.SavePainUseCase
 import es.jarroyo.daggerandkotlin.domain.usecase.executor.MainThread
 import es.jarroyo.daggerandkotlin.domain.usecase.executor.UseCaseExecutor
 import es.jarroyo.daggerandkotlin.domain.usecase.home.GetHomeUseCase
@@ -28,4 +30,9 @@ class DomainModule {
     fun provideSignUpUseCase(userRepository: UserRepository, executor: UseCaseExecutor,
                               mainThread: MainThread)
             = SignUpUseCase(userRepository, executor, mainThread)
+
+    @Provides
+    fun provideSavePainUseCase(bodyPartRepository: BodyPartRepository, executor: UseCaseExecutor,
+                             mainThread: MainThread)
+            = SavePainUseCase(bodyPartRepository, executor, mainThread)
 }

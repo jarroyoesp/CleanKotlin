@@ -18,7 +18,7 @@ class LoginUseCase(private val userRepository: UserRepository,
 
     override fun run() {
         try {
-            request!!.securePassword()
+            //request!!.securePassword()
             val response = userRepository.login(request!!)
             notifyUserLoggedIn(response.data!!)
         } catch (e: NetworkConnectionException) {
