@@ -1,6 +1,7 @@
 package es.jarroyo.daggerandkotlin.data.source.network
 
 import es.jarroyo.daggerandkotlin.data.entity.HomeEntity
+import es.jarroyo.daggerandkotlin.data.entity.PainEntity
 import es.jarroyo.daggerandkotlin.data.entity.UserEntity
 import es.jarroyo.daggerandkotlin.data.exception.IncorrectAuthenticationCredentialsException
 import es.jarroyo.daggerandkotlin.data.exception.NetworkServiceException
@@ -72,7 +73,7 @@ class NetworkDataSource(private var networkClientManager: NetworkClientManager,
     /***********************************************************************************************
      * GET PAIN
      **********************************************************************************************/
-    fun getPain(request: GetPainRequest): Response<List<BodyPart>> {
+    fun getPain(request: GetPainRequest): Response<List<PainEntity>> {
 
         val networkResponse = NetworkGetPainRequest(request, networkClientManager).run()
         if (networkResponse.isSuccessful) {

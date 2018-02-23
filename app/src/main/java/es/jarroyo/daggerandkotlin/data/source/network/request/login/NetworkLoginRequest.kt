@@ -50,36 +50,22 @@ class NetworkLoginRequest(private val loginRequest: LoginRequest,
             return networkResponse
         }
 
-        // Tratamos de hacer login con las credenciales
+        // Creamos un registro anonimo
         else {
-            var response: Task<AuthResult> = auth.signInWithEmailAndPassword(loginRequest.email,
-                    loginRequest.password)
 
-            if (response.isSuccessful) {
-
+            var responseAnonim: Task<AuthResult> = auth.signInAnonymously()
+            if (responseAnonim.isSuccessful) {
                 var networkUserAuthenticationResponse = NetworkUserAuthenticationResponse(auth.uid!!)
                 var networkResponse = NetworkResponse<NetworkUserAuthenticationResponse>(networkUserAuthenticationResponse)
 
                 return networkResponse
-            }
+            } else {
+                // Devolvemos error
+                val networkError: NetworkError = NetworkError()
+                networkError.error = responseAnonim.exception.toString()
+                var networkResponse = NetworkResponse<NetworkUserAuthenticationResponse>(null, networkError)
 
-            // Creamos un usuario anonimo
-            else {
-
-                var responseAnonim: Task<AuthResult> = auth.signInAnonymously()
-                if (responseAnonim.isSuccessful) {
-                    var networkUserAuthenticationResponse = NetworkUserAuthenticationResponse(auth.uid!!)
-                    var networkResponse = NetworkResponse<NetworkUserAuthenticationResponse>(networkUserAuthenticationResponse)
-
-                    return networkResponse
-                } else {
-                    // Devolvemos error
-                    val networkError: NetworkError = NetworkError()
-                    networkError.error = responseAnonim.exception.toString()
-                    var networkResponse = NetworkResponse<NetworkUserAuthenticationResponse>(null, networkError)
-
-                    return networkResponse
-                }
+                return networkResponse
             }
         }
     }

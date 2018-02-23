@@ -3,6 +3,7 @@ package es.jarroyo.daggerandkotlin.app.di.module
 import dagger.Module
 import dagger.Provides
 import es.jarroyo.daggerandkotlin.data.mapper.HomeEntityDataMapper
+import es.jarroyo.daggerandkotlin.data.mapper.PainEntityDataMapper
 import es.jarroyo.daggerandkotlin.data.mapper.UserEntityDataMapper
 import es.jarroyo.daggerandkotlin.data.repository.BodyPartRepository
 import es.jarroyo.daggerandkotlin.data.repository.HomeRepository
@@ -32,6 +33,7 @@ class RepositoryModule {
     @Singleton
     fun provideBodyPartRepository(networkDataSource: NetworkDataSource,
                                   diskDataSource: DiskDataSource,
-                                  cacheDataSource: CacheDataSource)
-            = BodyPartRepository(networkDataSource, diskDataSource, cacheDataSource)
+                                  cacheDataSource: CacheDataSource,
+                                  painEntityDataMapper: PainEntityDataMapper)
+            = BodyPartRepository(networkDataSource, diskDataSource, cacheDataSource, painEntityDataMapper)
 }

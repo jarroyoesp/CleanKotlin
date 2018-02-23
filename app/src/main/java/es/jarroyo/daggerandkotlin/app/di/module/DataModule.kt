@@ -2,10 +2,7 @@ package es.jarroyo.daggerandkotlin.app.di.module
 
 import dagger.Module
 import dagger.Provides
-import es.jarroyo.daggerandkotlin.data.mapper.HomeEntityDataMapper
-import es.jarroyo.daggerandkotlin.data.mapper.NetworkAuthenticationResponseToUserEntityMapper
-import es.jarroyo.daggerandkotlin.data.mapper.NetworkGetHomeResponseToHomeEntityMapper
-import es.jarroyo.daggerandkotlin.data.mapper.UserEntityDataMapper
+import es.jarroyo.daggerandkotlin.data.mapper.*
 import es.jarroyo.daggerandkotlin.data.source.cache.CacheDataSource
 import es.jarroyo.daggerandkotlin.data.source.disk.DiskDataSource
 import es.jarroyo.daggerandkotlin.data.source.network.NetworkDataSource
@@ -57,4 +54,9 @@ class DataModule {
     fun provideNetworkAuthenticationResponseToUserEntityMapper()
             = NetworkAuthenticationResponseToUserEntityMapper()
 
+
+    @Provides
+    @Singleton
+    fun providePainEntityDataMapper()
+            = PainEntityDataMapper()
 }

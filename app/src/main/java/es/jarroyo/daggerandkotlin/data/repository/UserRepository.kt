@@ -14,7 +14,7 @@ import es.jarroyo.daggerandkotlin.domain.usecase.signUp.SignUpRequest
 
 class UserRepository(private val networkDataSource: NetworkDataSource,
                      private val diskDataSource: DiskDataSource,
-        private val cacheDataSource: CacheDataSource,
+                     private val cacheDataSource: CacheDataSource,
                      private val userEntityDataMapper: UserEntityDataMapper) {
 
     fun getCurrentUser(): Response<User> {

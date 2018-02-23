@@ -7,9 +7,9 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import es.jarroyo.daggerandkotlin.data.entity.PainEntity
 import es.jarroyo.daggerandkotlin.data.source.network.manager.NetworkClientManager
 import es.jarroyo.daggerandkotlin.data.source.network.model.NetworkResponse
-import es.jarroyo.daggerandkotlin.domain.model.BodyPart
 import es.jarroyo.daggerandkotlin.domain.usecase.body.get.GetPainRequest
 import java.util.concurrent.ExecutionException
 
@@ -24,12 +24,12 @@ class NetworkGetPainRequest(private val getPainRequest: GetPainRequest,
     fun run(): NetworkResponse<NetworkGetPainResponse> {
         mDatabase = FirebaseDatabase.getInstance().getReference("BodyPartsPain/"+getPainRequest.userId)
 
-        val tcs = TaskCompletionSource<List<BodyPart>>()
+        val tcs = TaskCompletionSource<List<PainEntity>>()
         val postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val menu: MutableList<BodyPart> = mutableListOf()
+                val menu: MutableList<PainEntity> = mutableListOf()
 
-                tcs.setResult(dataSnapshot.children.mapNotNullTo(menu) { it.getValue<BodyPart>(BodyPart::class.java) })
+                tcs.setResult(dataSnapshot.children.mapNotNullTo(menu) { it.getValue<PainEntity>(PainEntity::class.java) })
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
@@ -39,7 +39,7 @@ class NetworkGetPainRequest(private val getPainRequest: GetPainRequest,
 
         mDatabase.addListenerForSingleValueEvent(postListener)
 
-        var t: Task<List<BodyPart>> = tcs.task
+        var t: Task<List<PainEntity>> = tcs.task
 
         try {
             Tasks.await(t)
