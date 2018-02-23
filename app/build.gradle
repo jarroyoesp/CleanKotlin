@@ -59,7 +59,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    implementation 'com.google.firebase:firebase-auth:' + rootProject.ext.playServicesVersion
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
@@ -83,23 +82,32 @@ dependencies {
     compile 'com.google.android.gms:play-services-auth:' + rootProject.ext.playServicesVersion
     compile 'com.pnikosis:materialish-progress:1.7'
 
+    // DAGGER
     compile 'com.google.dagger:dagger:' + rootProject.ext.daggerVersion
     kapt 'com.google.dagger:dagger-compiler:' + rootProject.ext.daggerVersion
 
+    // BUTTERKNIFE
     compile 'com.jakewharton:butterknife:' + rootProject.ext.butterknifeVersion
     kapt 'com.jakewharton:butterknife-compiler:' + rootProject.ext.butterknifeVersion
 
-    compile 'android.arch.persistence.room:runtime:1.0.0'
-    annotationProcessor 'android.arch.persistence.room:compiler:1.0.0'
-    kapt
-
+    // RETROFIT
     compile 'com.squareup.retrofit2:retrofit:' + rootProject.ext.retrofitVersion
     compile 'com.squareup.retrofit2:converter-gson:' + rootProject.ext.retrofitVersion
 
+    // PICASSO
     compile 'com.squareup.picasso:picasso:' + rootProject.ext.picassoVersion
 
+    // FIREBASE
+    compile 'com.google.firebase:firebase-auth:' + rootProject.ext.playServicesVersion
+    kapt 'com.google.firebase:firebase-auth:' + rootProject.ext.playServicesVersion
     compile 'com.google.firebase:firebase-core:' + rootProject.ext.playServicesVersion
     compile 'com.google.firebase:firebase-database:' + rootProject.ext.playServicesVersion
+    kapt 'com.google.firebase:firebase-database:' + rootProject.ext.playServicesVersion
+
+    // ROOM PERSISTENCE
+    compile 'android.arch.persistence.room:runtime:'+ rootProject.ext.roomVersion
+    annotationProcessor 'android.arch.persistence.room:compiler:'+ rootProject.ext.roomVersion
+    kapt "android.arch.persistence.room:compiler:"+ rootProject.ext.roomVersion
 
 }
 
