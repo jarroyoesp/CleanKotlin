@@ -7,8 +7,10 @@ import es.jarroyo.daggerandkotlin.data.mapper.NetworkAuthenticationResponseToUse
 import es.jarroyo.daggerandkotlin.data.mapper.NetworkGetHomeResponseToHomeEntityMapper
 import es.jarroyo.daggerandkotlin.data.mapper.UserEntityDataMapper
 import es.jarroyo.daggerandkotlin.data.source.cache.CacheDataSource
+import es.jarroyo.daggerandkotlin.data.source.disk.DiskDataSource
 import es.jarroyo.daggerandkotlin.data.source.network.NetworkDataSource
 import es.jarroyo.daggerandkotlin.data.source.network.manager.NetworkClientManager
+import es.jarroyo.daggerandkotlin.ui.App
 import javax.inject.Singleton
 
 @Module
@@ -24,6 +26,11 @@ class DataModule {
     @Singleton
     fun provideCacheDataSource()
             = CacheDataSource()
+
+    @Provides
+    @Singleton
+    fun provideDiskDataSource(appContext: App)
+            = DiskDataSource(appContext)
 
     @Provides
     @Singleton

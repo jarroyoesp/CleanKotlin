@@ -4,6 +4,7 @@ import es.jarroyo.daggerandkotlin.data.entity.UserEntity
 import es.jarroyo.daggerandkotlin.data.exception.UserNotFoundException
 import es.jarroyo.daggerandkotlin.data.mapper.UserEntityDataMapper
 import es.jarroyo.daggerandkotlin.data.source.cache.CacheDataSource
+import es.jarroyo.daggerandkotlin.data.source.disk.DiskDataSource
 import es.jarroyo.daggerandkotlin.data.source.network.NetworkDataSource
 import es.jarroyo.daggerandkotlin.domain.model.User
 import es.jarroyo.daggerandkotlin.domain.usecase.base.Response
@@ -12,13 +13,13 @@ import es.jarroyo.daggerandkotlin.domain.usecase.signUp.SignUpRequest
 
 
 class UserRepository(private val networkDataSource: NetworkDataSource,
-        /*private val diskDataSource: DiskDataSource,*/
+                     private val diskDataSource: DiskDataSource,
         private val cacheDataSource: CacheDataSource,
                      private val userEntityDataMapper: UserEntityDataMapper) {
 
     fun getCurrentUser(): Response<User> {
         var user = cacheDataSource.user
-        //if (user == null) user = diskDataSource.getUser()
+        if (user == null) user = diskDataSource.getUser()
         if (user == null) throw UserNotFoundException()
         return Response(userEntityDataMapper.map(user))
     }
@@ -40,7 +41,7 @@ class UserRepository(private val networkDataSource: NetworkDataSource,
     private fun saveUser(user: UserEntity?) {
         user?.let {
             cacheDataSource.user = user
-            /* diskDataSource.insertUser(it)*/
+            diskDataSource.insertUser(it)
         }
     }
 

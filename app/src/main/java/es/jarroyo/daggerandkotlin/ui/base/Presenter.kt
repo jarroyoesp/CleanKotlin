@@ -24,6 +24,6 @@ interface Presenter<out T : PresentationView> :
     }
 
     override fun onUserIsNotLoggedIn() {
-        //navigator.toLogin()
+        navigator.toLoginCleaningStack()
     }
 }

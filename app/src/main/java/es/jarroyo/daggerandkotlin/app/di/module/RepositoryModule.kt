@@ -8,6 +8,7 @@ import es.jarroyo.daggerandkotlin.data.repository.BodyPartRepository
 import es.jarroyo.daggerandkotlin.data.repository.HomeRepository
 import es.jarroyo.daggerandkotlin.data.repository.UserRepository
 import es.jarroyo.daggerandkotlin.data.source.cache.CacheDataSource
+import es.jarroyo.daggerandkotlin.data.source.disk.DiskDataSource
 import es.jarroyo.daggerandkotlin.data.source.network.NetworkDataSource
 import javax.inject.Singleton
 
@@ -17,8 +18,9 @@ class RepositoryModule {
     @Provides @Singleton
     fun provideUseRepository(networkDataSource: NetworkDataSource,
                              cacheDataSource: CacheDataSource,
+                             diskDataSource: DiskDataSource,
                              userEntityDataMapper: UserEntityDataMapper)
-            = UserRepository(networkDataSource, cacheDataSource, userEntityDataMapper)
+            = UserRepository(networkDataSource, diskDataSource, cacheDataSource, userEntityDataMapper)
 
     @Provides
     @Singleton
@@ -28,6 +30,8 @@ class RepositoryModule {
 
     @Provides
     @Singleton
-    fun provideBodyPartRepository(networkDataSource: NetworkDataSource, cacheDataSource: CacheDataSource)
-            = BodyPartRepository(networkDataSource, cacheDataSource)
+    fun provideBodyPartRepository(networkDataSource: NetworkDataSource,
+                                  diskDataSource: DiskDataSource,
+                                  cacheDataSource: CacheDataSource)
+            = BodyPartRepository(networkDataSource, diskDataSource, cacheDataSource)
 }

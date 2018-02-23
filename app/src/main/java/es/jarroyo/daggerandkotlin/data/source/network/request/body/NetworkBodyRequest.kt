@@ -14,7 +14,7 @@ class NetworkBodyRequest(private val savePainRequest: SavePainRequest,
 
     var mDatabase = FirebaseDatabase.getInstance().getReference()
     fun run(): NetworkResponse<NetworkBodyResponse> {
-        mDatabase = FirebaseDatabase.getInstance().getReference("BodyPartsPain/"+savePainRequest.bodypart.userId)
+        mDatabase = FirebaseDatabase.getInstance().getReference("BodyPartsPain/"+savePainRequest.userId)
 
         mDatabase.child(savePainRequest.bodypart.name).setValue(savePainRequest.bodypart)
 
