@@ -21,6 +21,13 @@ class PainEntityDataMapper : Mapper<PainEntity, BodyPart> {
                     getPainLevel(input),
                     getUserId(input))
 
+    fun mapToEntity(input: BodyPart): PainEntity =
+            PainEntity(
+                    input.id,
+                    input.name!!,
+                    input.painLevel,
+                    input.userId)
+
     private fun getId(input: PainEntity): String{
        return input.id
     }

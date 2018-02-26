@@ -18,7 +18,7 @@ interface PainDao {
     @Query("DELETE FROM pain")
     fun deleteAllPain()
 
-    @Query("SELECT * FROM pain WHERE userId LIKE :userId")
+    @Query("SELECT * FROM pain WHERE userId == :userId")
     fun getPainListUser(userId: String):  List<PainEntity>
 
 }
