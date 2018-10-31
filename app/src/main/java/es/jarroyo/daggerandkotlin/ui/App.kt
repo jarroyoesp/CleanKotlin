@@ -1,6 +1,6 @@
 package es.jarroyo.daggerandkotlin.ui
 
-import android.app.Application
+import android.support.multidex.MultiDexApplication
 import es.jarroyo.daggerandkotlin.app.di.component.ApplicationComponent
 import es.jarroyo.daggerandkotlin.app.di.component.DaggerApplicationComponent
 import es.jarroyo.daggerandkotlin.app.di.module.ApplicationModule
@@ -8,7 +8,7 @@ import es.jarroyo.daggerandkotlin.app.di.module.ApplicationModule
 /**
  * Created by javierarroyo on 28/12/17.
  */
-class App: Application() {
+class App: MultiDexApplication() {
     companion object {
         lateinit var graph: ApplicationComponent
     }
